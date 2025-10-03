@@ -1,0 +1,26 @@
+name: Basic Scan Example
+                                                                                                                                                                                                                                         
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+                                                                                                                                                                                                                                         
+jobs:
+  coverity-scan:
+    runs-on: [mac-arm-sh]
+                                                                                                                                                                                                                                         
+    steps:
+    - uses: actions/checkout@v4
+                                                                                                                                                                                                                                         
+    - name: Coverity Scan
+      uses: blackduck-inc/coverity-security-scan@v2
+      with:
+        coverity_url: ${{ vars.COVERITY_URL }}
+        coverity_user: ${{ secrets.COVERITY_USER }}
+        coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
+        
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      env:
+        DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
