@@ -19,8 +19,6 @@ jobs:
         coverity_url: ${{ vars.COVERITY_URL }}
         coverity_user: ${{ secrets.COVERITY_USER }}
         coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
-        
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      env:
-        DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+      
