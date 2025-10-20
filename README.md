@@ -1,4 +1,4 @@
-# Basic Scan - Coverity Connect Integration                                                                                                                                                                                                        
+# Coverity Build Scan                                                                                                                                                                                                        
                                                                                                                                                                                                                                                    
 ## Details                                                                                                                                                                                                                                         
                                                                                                                                                                                              
